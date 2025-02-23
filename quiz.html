@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block title %}Python Quiz - GitLearn.py{% endblock %}
+
+{% block content %}
+<div class="quiz-container">
+    <h1 class="mb-4">Python Quiz</h1>
+
+    <form id="quiz-form" class="mb-4">
+        {% for question in quiz.questions %}
+        <div class="card mb-4">
+            <div class="card-header">
+                <h5 class="mb-0">Question {{ loop.index }}</h5>
+            </div>
+            <div class="card-body">
+                <p class="card-text">{{ question.question }}</p>
+
+                {% for option in question.options %}
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" 
+                           name="{{ question.id }}" 
+                           id="{{ question.id }}_{{ loop.index0 }}"
+                           value="{{ loop.index0 }}" required>
+                    <label class="form-check-label" for="{{ question.id }}_{{ loop.index0 }}">
+                        {{ option }}
+                    </label>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        <!-- Store correct answer as data attribute -->
+        <input type="hidden" id="{{ question.id }}_correct" value="{{ question.correct }}">
+        {% endfor %}
+
+        <button type="submit" class="btn btn-primary">
+            <i class="fas fa-check-circle me-2"></i>Submit Quiz
+        </button>
+    </form>
+
+    <div id="quiz-score" class="alert alert-info"></div>
+</div>
+{% endblock %}

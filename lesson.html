@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block title %}{{ lesson.title }} - GitLearn.py{% endblock %}
+
+{% block content %}
+<div class="lesson-content">
+    <h1 class="mb-4">{{ lesson.title }}</h1>
+    
+    <div class="mb-4">
+        {{ lesson.content | safe }}
+    </div>
+
+    <div class="card mb-4">
+        <div class="card-header">
+            <h5 class="mb-0">Examples</h5>
+        </div>
+        <div class="card-body">
+            {% for example in lesson.examples %}
+            <div class="mb-4">
+                <textarea class="code-editor">{{ example }}</textarea>
+                <button class="btn btn-primary mt-2 run-code">
+                    <i class="fas fa-play me-2"></i>Run Code
+                </button>
+                <div class="code-output"></div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-header">
+            <h5 class="mb-0">Try it yourself</h5>
+        </div>
+        <div class="card-body">
+            <textarea class="code-editor">
+# Write your code here
+</textarea>
+            <button class="btn btn-primary mt-2 run-code">
+                <i class="fas fa-play me-2"></i>Run Code
+            </button>
+            <div class="code-output"></div>
+        </div>
+    </div>
+</div>
+{% endblock %}
