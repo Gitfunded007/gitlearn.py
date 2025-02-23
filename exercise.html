@@ -1,0 +1,86 @@
+{% extends "base.html" %}
+
+{% block title %}Exercises - GitLearn.py{% endblock %}
+
+{% block content %}
+<div class="lesson-content">
+    <h1 class="mb-4">Python Exercises</h1>
+
+    <div class="card mb-4">
+        <div class="card-header">
+            <h5 class="mb-0">Exercise 1: Variables</h5>
+        </div>
+        <div class="card-body">
+            <p>Create two variables, <code>first_name</code> and <code>last_name</code>, and concatenate them to create a full name.</p>
+
+            <textarea class="code-editor">
+# Create your variables here
+first_name = "John"  # Try changing this name
+last_name = "Doe"    # Try changing this name
+
+# Concatenate the names and print
+full_name = first_name + " " + last_name
+print(f"Full name is: {full_name}")
+</textarea>
+            <button class="btn btn-primary mt-2 run-code">
+                <i class="fas fa-play me-2"></i>Run Code
+            </button>
+            <div class="code-output"></div>
+
+            <button class="btn btn-secondary mt-3 show-solution">
+                <i class="fas fa-lightbulb me-2"></i>Show Solution
+            </button>
+            <div class="solution d-none">
+                <pre>
+first_name = "John"
+last_name = "Doe"
+full_name = first_name + " " + last_name
+print(f"Full name is: {full_name}")</pre>
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-header">
+            <h5 class="mb-0">Exercise 2: Data Types</h5>
+        </div>
+        <div class="card-body">
+            <p>Create variables of different data types (string, integer, float, boolean) and print their types and values.</p>
+
+            <textarea class="code-editor">
+# Create variables of different types
+text = "Hello"
+number = 42
+decimal = 3.14
+is_valid = True
+
+# Print each variable and its type
+print(f"text is '{text}' and has type: {type(text)}")
+print(f"number is {number} and has type: {type(number)}")
+print(f"decimal is {decimal} and has type: {type(decimal)}")
+print(f"is_valid is {is_valid} and has type: {type(is_valid)}")
+</textarea>
+            <button class="btn btn-primary mt-2 run-code">
+                <i class="fas fa-play me-2"></i>Run Code
+            </button>
+            <div class="code-output"></div>
+
+            <button class="btn btn-secondary mt-3 show-solution">
+                <i class="fas fa-lightbulb me-2"></i>Show Solution
+            </button>
+            <div class="solution d-none">
+                <pre>
+text = "Hello"
+number = 42
+decimal = 3.14
+is_valid = True
+
+print(f"text is '{text}' and has type: {type(text)}")
+print(f"number is {number} and has type: {type(number)}")
+print(f"decimal is {decimal} and has type: {type(decimal)}")
+print(f"is_valid is {is_valid} and has type: {type(is_valid)}")</pre>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
