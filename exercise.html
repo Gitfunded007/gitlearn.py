@@ -1,19 +1,45 @@
-{% extends "base.html" %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Exercises</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <!-- CodeMirror CSS and JS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.0/codemirror.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.0/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.0/mode/python/python.min.js"></script>
+    <style>
+        .CodeMirror {
+            border: 1px solid #ddd;
+            height: auto;
+            margin-bottom: 10px;
+        }
+        .code-output {
+            background-color: #f8f9fa;
+            padding: 10px;
+            border: 1px solid #ddd;
+            margin-top: 10px;
+            white-space: pre-wrap;
+        }
+    </style>
+</head>
+<body>
+    <div class="lesson-content container my-5">
+        <h1 class="mb-4">Python Exercises</h1>
 
-{% block title %}Exercises - GitLearn.py{% endblock %}
+        <!-- Exercise 1: Variables -->
+        <div class="card mb-4">
+            <div class="card-header">
+                <h5 class="mb-0">Exercise 1: Variables</h5>
+            </div>
+            <div class="card-body">
+                <p>Create two variables, <code>first_name</code> and <code>last_name</code>, and concatenate them to create a full name.</p>
 
-{% block content %}
-<div class="lesson-content">
-    <h1 class="mb-4">Python Exercises</h1>
-
-    <div class="card mb-4">
-        <div class="card-header">
-            <h5 class="mb-0">Exercise 1: Variables</h5>
-        </div>
-        <div class="card-body">
-            <p>Create two variables, <code>first_name</code> and <code>last_name</code>, and concatenate them to create a full name.</p>
-
-            <textarea class="code-editor">
+                <textarea id="code-editor-1">
 # Create your variables here
 first_name = "John"  # Try changing this name
 last_name = "Doe"    # Try changing this name
@@ -22,32 +48,33 @@ last_name = "Doe"    # Try changing this name
 full_name = first_name + " " + last_name
 print(f"Full name is: {full_name}")
 </textarea>
-            <button class="btn btn-primary mt-2 run-code">
-                <i class="fas fa-play me-2"></i>Run Code
-            </button>
-            <div class="code-output"></div>
+                <button class="btn btn-primary mt-2 run-code" data-editor="code-editor-1">
+                    <i class="fas fa-play me-2"></i>Run Code
+                </button>
+                <div class="code-output" id="output-1"></div>
 
-            <button class="btn btn-secondary mt-3 show-solution">
-                <i class="fas fa-lightbulb me-2"></i>Show Solution
-            </button>
-            <div class="solution d-none">
-                <pre>
+                <button class="btn btn-secondary mt-3 show-solution" data-solution="solution-1">
+                    <i class="fas fa-lightbulb me-2"></i>Show Solution
+                </button>
+                <div class="solution d-none" id="solution-1">
+                    <pre>
 first_name = "John"
 last_name = "Doe"
 full_name = first_name + " " + last_name
 print(f"Full name is: {full_name}")</pre>
+                </div>
             </div>
         </div>
-    </div>
 
-    <div class="card">
-        <div class="card-header">
-            <h5 class="mb-0">Exercise 2: Data Types</h5>
-        </div>
-        <div class="card-body">
-            <p>Create variables of different data types (string, integer, float, boolean) and print their types and values.</p>
+        <!-- Exercise 2: Data Types -->
+        <div class="card">
+            <div class="card-header">
+                <h5 class="mb-0">Exercise 2: Data Types</h5>
+            </div>
+            <div class="card-body">
+                <p>Create variables of different data types (string, integer, float, boolean) and print their types and values.</p>
 
-            <textarea class="code-editor">
+                <textarea id="code-editor-2">
 # Create variables of different types
 text = "Hello"
 number = 42
@@ -60,16 +87,16 @@ print(f"number is {number} and has type: {type(number)}")
 print(f"decimal is {decimal} and has type: {type(decimal)}")
 print(f"is_valid is {is_valid} and has type: {type(is_valid)}")
 </textarea>
-            <button class="btn btn-primary mt-2 run-code">
-                <i class="fas fa-play me-2"></i>Run Code
-            </button>
-            <div class="code-output"></div>
+                <button class="btn btn-primary mt-2 run-code" data-editor="code-editor-2">
+                    <i class="fas fa-play me-2"></i>Run Code
+                </button>
+                <div class="code-output" id="output-2"></div>
 
-            <button class="btn btn-secondary mt-3 show-solution">
-                <i class="fas fa-lightbulb me-2"></i>Show Solution
-            </button>
-            <div class="solution d-none">
-                <pre>
+                <button class="btn btn-secondary mt-3 show-solution" data-solution="solution-2">
+                    <i class="fas fa-lightbulb me-2"></i>Show Solution
+                </button>
+                <div class="solution d-none" id="solution-2">
+                    <pre>
 text = "Hello"
 number = 42
 decimal = 3.14
@@ -79,8 +106,57 @@ print(f"text is '{text}' and has type: {type(text)}")
 print(f"number is {number} and has type: {type(number)}")
 print(f"decimal is {decimal} and has type: {type(decimal)}")
 print(f"is_valid is {is_valid} and has type: {type(is_valid)}")</pre>
+                </div>
             </div>
         </div>
     </div>
-</div>
-{% endblock %}
+
+    <!-- Bootstrap JS (Optional, for interactive components) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- JavaScript for Code Execution and Solution Toggle -->
+    <script>
+        // Initialize CodeMirror editors
+        const editors = {};
+        document.querySelectorAll('textarea[id^="code-editor-"]').forEach((textarea) => {
+            editors[textarea.id] = CodeMirror.fromTextArea(textarea, {
+                mode: "python",
+                lineNumbers: true,
+                theme: "default",
+            });
+        });
+
+        // Run Code Button Functionality
+        document.querySelectorAll('.run-code').forEach((button) => {
+            button.addEventListener('click', () => {
+                const editorId = button.getAttribute('data-editor');
+                const outputId = `output-${editorId.split('-')[2]}`;
+                const code = editors[editorId].getValue();
+
+                // Simulate code execution (for demonstration purposes)
+                const output = document.getElementById(outputId);
+                output.textContent = "Running code...\n";
+
+                // Use a timeout to simulate execution
+                setTimeout(() => {
+                    try {
+                        // Use eval for demonstration (not recommended for production)
+                        const result = eval(code);
+                        output.textContent += "Output:\n" + result;
+                    } catch (error) {
+                        output.textContent += "Error:\n" + error.message;
+                    }
+                }, 1000);
+            });
+        });
+
+        // Show Solution Button Functionality
+        document.querySelectorAll('.show-solution').forEach((button) => {
+            button.addEventListener('click', () => {
+                const solutionId = button.getAttribute('data-solution');
+                const solution = document.getElementById(solutionId);
+                solution.classList.toggle('d-none');
+            });
+        });
+    </script>
+</body>
+</html>
