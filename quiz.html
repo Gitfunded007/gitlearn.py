@@ -1,42 +1,25 @@
-{% extends "base.html" %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Quiz - GitLearn.py</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <!-- Same navigation as index.html -->
+    </nav>
 
-{% block title %}Python Quiz - GitLearn.py{% endblock %}
+    <div class="container my-5">
+        <h1 class="mb-4">Python Quiz</h1>
+        
+        <form id="quiz-form" class="mb-4">
+            <!-- Add your quiz questions here -->
+        </form>
+    </div>
 
-{% block content %}
-<div class="quiz-container">
-    <h1 class="mb-4">Python Quiz</h1>
-
-    <form id="quiz-form" class="mb-4">
-        {% for question in quiz.questions %}
-        <div class="card mb-4">
-            <div class="card-header">
-                <h5 class="mb-0">Question {{ loop.index }}</h5>
-            </div>
-            <div class="card-body">
-                <p class="card-text">{{ question.question }}</p>
-
-                {% for option in question.options %}
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" 
-                           name="{{ question.id }}" 
-                           id="{{ question.id }}_{{ loop.index0 }}"
-                           value="{{ loop.index0 }}" required>
-                    <label class="form-check-label" for="{{ question.id }}_{{ loop.index0 }}">
-                        {{ option }}
-                    </label>
-                </div>
-                {% endfor %}
-            </div>
-        </div>
-        <!-- Store correct answer as data attribute -->
-        <input type="hidden" id="{{ question.id }}_correct" value="{{ question.correct }}">
-        {% endfor %}
-
-        <button type="submit" class="btn btn-primary">
-            <i class="fas fa-check-circle me-2"></i>Submit Quiz
-        </button>
-    </form>
-
-    <div id="quiz-score" class="alert alert-info"></div>
-</div>
-{% endblock %}
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
